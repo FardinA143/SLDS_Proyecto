@@ -19,9 +19,9 @@
 \setlength{\beamer@headheight}{.15\paperheight}
 %Declare Images
 % Image for bottom-left regular frame
-\pgfdeclareimage[width=.1\paperwidth]{small-logo1}{UASLP_Logo}
+\pgfdeclareimage[width=.06\paperwidth]{small-logo1}{fib.png}
 % Image for top-left regular frame
-\pgfdeclareimage[width=.12\paperwidth]{small-logo}{LOGO_Facultad.png}
+\pgfdeclareimage[width=.1\paperwidth]{small-logo}{Logo_UPC.png}
 %Image for title frame
 \pgfdeclareimage[width=.33\paperwidth]{type-logo}{UASLP_head1}
 %Image for final frame
@@ -38,8 +38,19 @@
 }
 
 % Declare foot line for regular frame
-\setbeamertemplate{footline}[text line]{%
-\insertshortauthor\strut\hfill\insertshorttitle\hfill\insertshortdate\hspace{4em}\insertframenumber/\inserttotalframenumber}
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=3.5ex,dp=3ex]{footline}%
+      \hbox to \paperwidth{%
+        \hfill\insertshorttitle\hfill%
+        \insertframenumber/\inserttotalframenumber\hspace{1em}%
+      }%
+    \end{beamercolorbox}%
+  }%
+}
+
+
 
 %% Declare regular frame title and side
 \addtobeamertemplate{frametitle}{}{%
