@@ -1,0 +1,114 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{geometry}  % Para configurar los márgenes
+
+% Modificar interlineado
+\linespread{1.3}  % Aumenta el interlineado
+
+% Ajustar márgenes laterales
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}  % Márgenes reducidos
+
+% Eliminamos los cuadros del índice
+\renewcommand{\cftsecfont}{\normalfont}  
+\renewcommand{\cftsubsecfont}{\normalfont}  
+\renewcommand{\cftsecpagefont}{\normalfont} 
+
+% Configuración de la portada
+\pagestyle{empty}  % Sin numeración en la portada
+
+% Modificar la distancia entre las secciones
+\titleformat{\chapter}[block]{\normalfont\huge\bfseries}{\thechapter}{1em}{}
+\titlespacing*{\chapter}{0pt}{-20pt}{10pt} % Ajusta el espacio anterior y posterior al capítulo
+
+% Para reducir el espacio entre secciones
+\titleformat{\section}[block]{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{1ex}{1ex}  % Reduce el espaciado
+
+\begin{document}
+
+% Portada
+\begin{titlepage}
+    \begin{center}
+        \Huge \textbf{Modelos de Negocio y Seguridad en Software Libre} \\[0.5cm]
+        \Large \textit{Software libre y desarrollo social} \\[1cm]  % Subtítulo
+        \vspace{0.5cm}  % Ajuste de espaciado
+        \includegraphics[width=0.8\textwidth]{ruta/de/tu/imagen.jpg} \\[1cm]  % Reducir el tamaño de la imagen
+        \Large
+        Trabajo realizado por: \\[0cm]
+        \textbf{Berta}, \textbf{Hawjeria}, \textbf{Fardin}, \textbf{Francisco}, \textbf{Marc} \\[0.7cm]
+        \normalsize
+        \textbf{Fecha de entrega:} Noviembre 2025 \\[0cm]
+    \end{center}
+\end{titlepage}
+
+% Índice (sin cuadros)
+\tableofcontents
+\newpage
+
+% Hojas en blanco con títulos (Parte 1 ... Parte 4)
+\chapter*{Parte 1}
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+\end{center}
+\newpage
+
+\chapter*{Parte 2}
+\thispagestyle{empty}  
+\vspace*{\fill}
+\begin{center}
+\end{center}
+\newpage
+
+\chapter*{Parte 3}
+\thispagestyle{empty}  
+\vspace*{\fill}
+\begin{center}
+\end{center}
+\newpage
+
+\chapter*{Parte 4}
+\thispagestyle{empty}  
+\vspace*{\fill}
+\begin{center}
+\end{center}
+\newpage
+
+% Sección 5: Resumen de tu parte del trabajo (Explicación de la presentación)
+\chapter*{Modelos de Negocio y Seguridad}
+\addcontentsline{toc}{chapter}{Modelos de Negocio y Seguridad} % Añadir al índice
+
+% Cambiar el estilo de la página a numerada
+\pagestyle{plain}  % Para numerar todas las páginas, excepto la portada
+
+\section{¿Se puede ganar dinero con software libre?}
+El software libre permite generar ingresos a través de modelos alternativos como servicios profesionales, soporte técnico, desarrollo personalizado y donaciones. Aunque no se vende una licencia, la comunidad activa y la participación de los usuarios pueden garantizar la sostenibilidad financiera del proyecto. Plataformas como GitHub Sponsors, Patreon, o Ko-fi permiten a los desarrolladores recibir financiación directa.
+
+\section{Modelos}
+Los modelos de negocio más comunes para generar ingresos con software libre son el de las donaciones y mecenazgo, el modelo freemium y los servicios añadidos, y la publicidad ética.
+
+El modelo de donaciones y mecenazgo se ha popularizado, especialmente en el ámbito del software libre móvil. En este modelo, las aplicaciones son gratuitas y de código abierto, pero los usuarios pueden contribuir económicamente al proyecto a través de plataformas como Patreon o GitHub Sponsors. Este modelo permite que los desarrolladores mantengan la libertad del software mientras aseguran la viabilidad financiera del proyecto.
+
+El modelo freemium consiste en ofrecer una versión gratuita del software con características limitadas y una versión premium con funciones adicionales. Este modelo es ideal para aplicaciones que requieren servicios extras como almacenamiento en la nube o características avanzadas. A través de las suscripciones o pagos únicos, se generan ingresos adicionales sin comprometer la libertad del código fuente.
+
+Por otro lado, la publicidad ética se basa en la inserción de anuncios no invasivos que respetan la privacidad del usuario. A diferencia de los modelos tradicionales, no se utiliza el rastreo de datos personales. Los anuncios son estáticos y no interrumpen la experiencia del usuario. Además, muchos proyectos permiten eliminar los anuncios a través de donaciones, asegurando la transparencia y manteniendo un modelo económico sostenible.
+
+En cuanto a la comparación de los modelos, cada uno tiene sus ventajas y desventajas. La publicidad ética genera ingresos constantes pero relativamente bajos, mientras que las donaciones dependen de la participación activa de la comunidad. Por su parte, el modelo freemium ofrece una fuente estable de ingresos, aunque debe equilibrarse con una oferta gratuita suficientemente atractiva para captar usuarios.
+
+\section{Seguridad y Privacidad en Software Libre}
+El software libre tiene ventajas notables en términos de seguridad. Al ser código abierto, permite que cualquier persona pueda revisar y auditar el código, lo que facilita la detección de vulnerabilidades. Además, los fallos de seguridad suelen corregirse rápidamente debido a la colaboración activa de la comunidad.
+
+El control sobre los permisos y la transparencia en el acceso a los datos es otra ventaja crucial del software libre. A diferencia del software propietario, que a menudo oculta las funcionalidades que acceden a los datos personales, el software libre ofrece un nivel de confianza más alto debido a su naturaleza abierta.
+
+\section{Conclusión}
+El software libre no solo es una opción viable para el desarrollo de aplicaciones, sino que también ofrece varios modelos de negocio que permiten a los desarrolladores generar ingresos sin comprometer la libertad del código. A su vez, proporciona mayores garantías de seguridad y privacidad para los usuarios, lo que lo convierte en una opción cada vez más atractiva tanto para desarrolladores como para usuarios.
+
+\newpage
+
+\end{document}
