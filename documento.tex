@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{graphicx}
-\usepackage{hyperref}
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=black, citecolor=black]{hyperref}
 \usepackage{lipsum}
 \usepackage{titlesec}
 \usepackage{tocloft}
@@ -18,6 +18,10 @@
 \renewcommand{\cftsecfont}{\normalfont}
 \renewcommand{\cftsubsecfont}{\normalfont}
 \renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftdotsep}{1}
 
 % Configuración de la portada
 \pagestyle{empty}  % Sin numeración en la portada
@@ -32,18 +36,29 @@
 
 \begin{document}
 
-% Portada
 \begin{titlepage}
     \begin{center}
-        \Huge \textbf{Modelos de Negocio y Seguridad en Software Libre} \\[0.5cm]
-        \Large \textit{Software libre y desarrollo social} \\[1cm]  % Subtítulo
-        \vspace{0.5cm}  % Ajuste de espaciado
-        \includegraphics[width=0.8\textwidth]{ruta/de/tu/imagen.jpg} \\[1cm]  % Reducir el tamaño de la imagen
-        \Large
-        Trabajo realizado por: \\[0cm]
-        \textbf{Berta}, \textbf{Hawjeria}, \textbf{Fardin}, \textbf{Francisco}, \textbf{Marc} \\[0.7cm]
-        \normalsize
-        \textbf{Fecha de entrega:} Noviembre 2025 \\[0cm]
+        % Título principal
+        {\Huge \textbf{Software Libre en Dispositivos Móviles}}\\[0.5cm]
+        {\Large \textit{Sistemas operativos, impacto y desarrollo móvil}}\\[1.5cm]
+
+        % Imagen centrada
+        \includegraphics[width=0.65\textwidth]{portada.png}\\[1cm]
+
+        % Asignatura / Cuatrimestre
+        {\large \textbf{Software Libre y Desarrollo Social}}\\[0.2cm]
+        {\large Q1 2025/2026}\\[1cm]
+
+        % Autores
+        {\large \textbf{Trabajo realizado por:}}\\[0.4cm]
+        {\large
+        Berta Ferré\\
+        Hawjeria Hussain\\
+        Fardin Arafat\\
+        Francisco Ruiz\\
+        Marc Ribas\\
+        }
+
     \end{center}
 \end{titlepage}
 
@@ -51,12 +66,9 @@
 \tableofcontents
 \newpage
 
-% Hojas en blanco con títulos (Parte 1 ... Parte 4)
-\chapter*{Introducción}
-\addcontentsline{toc}{chapter}{Introducción}
+%------------------------------APARTADO 1---------------------------------
 \pagestyle{plain}
-\chapter*{Introducción}
-\addcontentsline{toc}{chapter}{Introducción}
+\chapter{Introducción}
 
 En los últimos años, los dispositivos móviles se han convertido en una parte esencial de nuestra vida diaria. Pasamos gran parte del día usando el móvil para comunicarnos, trabajar, estudiar, hacer compras o simplemente entretenernos. Aunque dependemos mucho de estos dispositivos, muy pocas personas se plantean realmente cuánto control tienen sobre ellos. Esta es una de las razones por las que el software libre empieza a ganar importancia dentro del mundo móvil.
 
@@ -77,31 +89,37 @@ A pesar de estas dificultades, las comunidades de software libre siguen avanzand
 En resumen, el software libre en dispositivos móviles ofrece una manera distinta de entender la tecnología: más abierta, más transparente y centrada en el usuario. Aunque hoy el mercado esté dominado por sistemas propietarios, las iniciativas libres siguen creciendo y cobrando importancia, y es muy probable que su papel en el futuro sea cada vez mayor.
 
 
-
-\chapter*{Parte 2}
+%------------------------------APARTADO 2---------------------------------
+\chapter{Parte 2}
 \thispagestyle{empty}
 \vspace*{\fill}
 \begin{center}
 \end{center}
 \newpage
 
-\chapter*{Parte 3}
+%------------------------------APARTADO 3---------------------------------
+\chapter{Parte 3}
 \thispagestyle{empty}
 \vspace*{\fill}
 \begin{center}
 \end{center}
 \newpage
 
-\chapter*{Parte 4}
-\thispagestyle{empty}
-\vspace*{\fill}
-\begin{center}
-\end{center}
-\newpage
+%------------------------------APARTADO 4---------------------------------
+\chapter{Software Libre en Aplicaciones Móviles: Desarrollo, Costes y Difusión}
+
+El software libre en el ámbito móvil se presenta como una alternativa sólida a las aplicaciones privativas tradicionales. Su ecosistema se apoya principalmente en repositorios comunitarios como F-Droid, donde todas las aplicaciones se publican de manera transparente, sin rastreadores y sin depender de intermediarios que controlen el proceso de distribución. Frente a tiendas privativas como Google Play o Apple App Store, estas plataformas abiertas permiten un mayor control, más privacidad y un modelo más ético de distribución de software.
+
+En cuanto al desarrollo, crear aplicaciones libres no difiere técnicamente del desarrollo tradicional. En Android se utilizan lenguajes como Kotlin o Java, mientras que en iOS se recurre a Swift, aunque con mayores limitaciones por parte de Apple. Además, frameworks libres y multiplataforma como Flutter, Qt, React Native o Kivy facilitan la creación de apps auditables y adaptables. El software libre destaca especialmente por su colaboración comunitaria, lo que acelera la detección de errores y mejora la seguridad general del proyecto.
+
+Respecto a los costes, las diferencias entre plataformas son muy notables. Publicar en Google Play o en la App Store implica tasas obligatorias y comisiones; esto supone una barrera para pequeños desarrolladores o para proyectos independientes. En cambio, en F-Droid la publicación es completamente gratuita, lo que hace que el software libre sea más accesible y sostenible.
+
+La difusión de aplicaciones libres se apoya en la comunidad: foros, repositorios como GitHub, redes descentralizadas como Mastodon y documentación abierta. Aunque carecen del marketing masivo propio de las grandes empresas, estos proyectos crecen impulsados por el interés cada vez mayor en la privacidad, la ética digital y la transparencia.
+
+En conjunto, el software libre móvil constituye un ecosistema viable, seguro y centrado en el usuario. Representa una alternativa tecnológica sostenible y ética que continúa expandiéndose a medida que aumenta la preocupación por la privacidad y la necesidad de recuperar el control sobre nuestros dispositivos móviles.
 
 % Sección 5: Resumen de tu parte del trabajo (Explicación de la presentación)
-\chapter*{Modelos de Negocio y Seguridad}
-\addcontentsline{toc}{chapter}{Modelos de Negocio y Seguridad} % Añadir al índice
+\chapter{Modelos de Negocio y Seguridad}
 
 % Cambiar el estilo de la página a numerada
 \pagestyle{plain}  % Para numerar todas las páginas, excepto la portada
