@@ -1,6 +1,6 @@
-# SLDS_Proyecto
+# Software Libre y Desarollo Social
 
-Proyecto para SLDS sobre software libre para móviles
+Trabajo sobre Software Libre para móviles. Contenido para la materia de Software Libre y Desarollo Social (SLDS)
 
 ## Descripción
 
