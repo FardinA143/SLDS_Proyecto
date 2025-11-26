@@ -8,9 +8,11 @@ Este proyecto explora el tema del software libre en dispositivos móviles, con u
 
 ## Contenido del Proyecto
 
-- **documento.tex**: Documento principal en formato LaTeX (report) que cubre introducción, sistemas operativos libres, aplicaciones de software libre, modelos de negocio y seguridad.
+- **latex_doc**: Documento principal en formato LaTeX (report) que cubre introducción, sistemas operativos libres, aplicaciones de software libre, modelos de negocio y seguridad.
 
-- **presentacion.tex**: Otra presentación Beamer, posiblemente una versión alternativa o complementaria.
+- **latex_slideshow**: Código LaTeX de la presentación en formato Beamer que resume los puntos clave del documento para presentaciones orales.
+
+- **output** : Carpeta que contiene los archivos PDF generados del documento y la presentación.
 
 
 ## Cómo Compilar
@@ -45,5 +47,5 @@ Software Libre y Desarrollo Social (SLDS) - Q1 2025/2026
 
 ## Licencia
 
-Este proyecto es de código abierto y se distribuye bajo la licencia [MIT](https://opensource.org/licenses/MIT).
+Este proyecto es de código abierto y se distribuye bajo la licencia [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
