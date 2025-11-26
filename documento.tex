@@ -90,12 +90,17 @@ En resumen, el software libre en dispositivos móviles ofrece una manera distint
 
 
 %------------------------------APARTADO 2---------------------------------
-\chapter{Parte 2}
-\thispagestyle{empty}
-\vspace*{\fill}
-\begin{center}
-\end{center}
-\newpage
+\chapter*{Sistemas Operativos Libres para Dispositivos Móviles}
+\addcontentsline{toc}{chapter}{Sistemas Operativos Libres para Dispositivos Móviles} % Añadir al índice
+\thispagestyle{plain}
+
+Hoy en dia, el mundo de los Sistemas Operativos para smartphones se trata de un oligopolio entre iOS y Google Android. iOS se describe como un sistema exclusivo, propietario y cerrado que limita la interacción del usuario, la personalización y restringe la instalación de aplicaciones únicamente a las verificadas por Apple, una práctica que la Unión Europea intenta combatir. Por otro lado, Android parte de un proyecto de código abierto al que Google añade una capa de servicios propietarios que gestionan funciones clave, lo cual compromete la privacidad del usuario con fines comerciales. Además, se menciona una futura restricción mediante la Play Integrity API que permitirá bloquear aplicaciones no registradas.
+
+Respecto a las alternativas libres, existen principalmente dos vertientes: los forks del AOSP y las versiones de Linux. GrapheneOS es el ejemplo destacado de los forks, enfocado en la privacidad y seguridad mediante la eliminación de servicios de Google y la implementación de medidas como gestión granular de permisos, aislamiento de aplicaciones en sandboxes, perfiles separados y prevención de exploits. Aunque requiere un dispositivo Google Pixel por su chip TPM para verificar la integridad, soluciona la compatibilidad de aplicaciones permitiendo ejecutar los servicios de Google de manera aislada y sin permisos absolutos.
+
+La otra vertiente busca adaptar GNU/Linux a dispositivos móviles aprovechando la arquitectura ARM y adaptando entornos de escritorio como GNOME o KDE. Para la compatibilidad con aplicaciones existentes, estos sistemas suelen incluir Waydroid, que permite ejecutar apps de Android. Sin embargo, enfrentan el problema de los drivers propietarios de componentes como cámaras y módems, lo que obliga a los desarrolladores a usar capas de compatibilidad o ingeniería inversa. Ejemplos como UbuntuTouch y PostmarketOS ilustran esta categoría, ofreciendo sistemas completamente modificables capaces de revivir hardware antiguo.
+
+En conclusión, aunque los sistemas dominantes son extremadamente convenientes, existen razones de peso como la seguridad y la privacidad para considerar alternativas. Los forks como GrapheneOS ofrecen un equilibrio funcional sin comprometer la privacidad, mientras que los dispositivos Linux, aunque menos desarrollados, permiten una experiencia libre y la recuperación de dispositivos antiguos.
 
 %------------------------------APARTADO 3---------------------------------
 \chapter{Parte 3}
