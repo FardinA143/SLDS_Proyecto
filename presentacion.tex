@@ -220,10 +220,6 @@
 \begin{itemize}
 	\item Sistema operativo \textbf{exclusivo para smartphones de Apple} \vspace{10pt}
 	\item Se caracteriza por su interfaz: \vspace{10pt}
-	\begin{itemize}
-		\item Simple y sencilla \vspace{2pt}
-		\item Estilizada y moderna \vspace{2pt}
-	\end{itemize}
 \item Y también por su \textbf{ecosistema cerrado:}
 	\begin{itemize}
 		\item Personalización limitada\vspace{2pt}
@@ -246,7 +242,6 @@
 		\item Google Wallet\vspace{2pt}
 		\item ...\vspace{2pt}
 	\end{itemize}
-	\item Luego Google ofrece este sistema operativo a terceros, a parte de usarlo en sus propios dispositivos
 \end{itemize}
 \end{frame}
 
@@ -286,6 +281,82 @@
 \end{column}
 
 \end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{GrapheneOS}
+
+\begin{columns}[c]
+\begin{column}{0.8\textwidth}
+	\begin{itemize}
+		\item Fork del AOSP orientado a: \textbf{Privacidad} y \textbf{Seguridad} \vspace{10pt}
+		\item No incluye los Google Mobile Services \vspace{10pt}
+		\item Control granular de todos los permisos de las aplicaciones \vspace{10pt}
+		\item Mejoras en Android para aumentar la seguridad: \vspace{10pt}
+			\begin{itemize}
+			\item Sandboxes
+			\item Randomizado de MAC
+			\item Sistemas de auditoria
+			\item Perfiles aislados
+			\item Ejecuciones seguras
+			\item ...
+			\end{itemize}
+	\end{itemize}
+	\end{column}
+\begin{column}{0.2\textwidth}
+            \includegraphics[width=1\linewidth]{grapheneos.png}
+\end{column}
+
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{GrapheneOS}
+
+\begin{itemize}
+	\item \textbf{Inconvenientes:} \vspace{10pt}
+	\begin{itemize}
+		\item Requiere un \textbf{módulo TPM}, únicamente Google Pixel \vspace{2pt}
+		\item Apps que requieran Google Mobile Services \vspace{2pt}
+	\end{itemize}
+	\item \textbf{Solución a los Google Mobile Services:} Sandboxed Google Services
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Linux en Dispositivos Móviles}
+
+\begin{itemize}
+	\item Kernel de Linux compatible con CPUs ARM \vspace{10pt}
+	\item Adapta software de Desktop a Mobile como Wayland, GNOME, KDE, etc.\vspace{10pt}
+	\item \textbf{Waydroid:} Capa de compatibilidad con aplicaciones Android\vspace{10pt}
+	\item El problema son los \textbf{drivers propietarios} de antenas, cámaras, módems, etc.\vspace{10pt}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Linux en Dispositivos Móviles}
+
+\begin{itemize}
+	\item \textbf{UbuntuTouch:} \vspace{10pt}
+	\end{itemize}
+	\centering
+	\includegraphics[width=0.4\linewidth]{ubuntu-touch.jpg}
+	\begin{itemize}
+	\item \textbf{PostmarketOS:} \vspace{10pt}
+	\end{itemize}
+	\centering
+	\includegraphics[width=0.4\linewidth]{postmarketos.jpg}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conclusiones}
+
+\begin{itemize}
+	\item Google Android y iOS son muy convenientes y populares, pero \textbf{comprometen nuestra libertad y privacidad} \vspace{10pt}
+	\item Ya existen alternativas muy usables y buenas a partir de forks del AOSP como \textbf{GraoheneOS o LineageOS} \vspace{10pt}
+	\item Linux en dispositivos móviles aún necesita desarrollo \vspace{10pt}
+\end{itemize}
 \end{frame}
 %------------------------------APARTADO 4---------------------------------
 \section[Apps libres]{Software Libre en Aplicaciones Móviles: Desarrollo, Costes y Difusión}
@@ -449,81 +520,6 @@
 %------------------------------APARTADO 5---------------------------------
 \section[Negocio y seguridad]{Modelos de Negocio y Seguridad}
 
-\begin{frame}
-\frametitle{GrapheneOS}
-
-\begin{columns}[c]
-\begin{column}{0.8\textwidth}
-	\begin{itemize}
-		\item Fork del AOSP orientado a: \textbf{Privacidad} y \textbf{Seguridad} \vspace{10pt}
-		\item No incluye los Google Mobile Services \vspace{10pt}
-		\item Control granular de todos los permisos de las aplicaciones \vspace{10pt}
-		\item Mejoras en Android para aumentar la seguridad: \vspace{10pt}
-			\begin{itemize}
-			\item Sandboxes
-			\item Randomizado de MAC
-			\item Sistemas de auditoria
-			\item Perfiles aislados
-			\item Ejecuciones seguras
-			\item ...
-			\end{itemize}
-	\end{itemize}
-	\end{column}
-\begin{column}{0.2\textwidth}
-            \includegraphics[width=1\linewidth]{grapheneos.png}
-\end{column}
-
-    \end{columns}
-\end{frame}
-
-\begin{frame}
-\frametitle{GrapheneOS}
-
-\begin{itemize}
-	\item \textbf{Inconvenientes:} \vspace{10pt}
-	\begin{itemize}
-		\item Requiere un \textbf{módulo TPM}, únicamente Google Pixel \vspace{2pt}
-		\item Apps que requieran Google Mobile Services \vspace{2pt}
-	\end{itemize}
-	\item \textbf{Solución a los Google Mobile Services:} Sandboxed Google Services
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Linux en Dispositivos Móviles}
-
-\begin{itemize}
-	\item Kernel de Linux compatible con CPUs ARM \vspace{10pt}
-	\item Adapta software de Desktop a Mobile como Wayland, GNOME, KDE, etc.\vspace{10pt}
-	\item \textbf{Waydroid:} Capa de compatibilidad con aplicaciones Android\vspace{10pt}
-	\item El problema son los \textbf{drivers propietarios} de antenas, cámaras, módems, etc.\vspace{10pt}
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Linux en Dispositivos Móviles}
-
-\begin{itemize}
-	\item \textbf{UbuntuTouch:} \vspace{10pt}
-	\end{itemize}
-	\centering
-	\includegraphics[width=0.4\linewidth]{ubuntu-touch.jpg}
-	\begin{itemize}
-	\item \textbf{PostmarketOS:} \vspace{10pt}
-	\end{itemize}
-	\centering
-	\includegraphics[width=0.4\linewidth]{postmarketos.jpg}
-\end{frame}
-
-\begin{frame}
-\frametitle{Conclusiones}
-
-\begin{itemize}
-	\item Google Android y iOS son muy convenientes y populares, pero \textbf{comprometen nuestra libertad y privacidad} \vspace{10pt}
-	\item Ya existen alternativas muy usables y buenas a partir de forks del AOSP como \textbf{GraoheneOS o LineageOS} \vspace{10pt}
-	\item Linux en dispositivos móviles aún necesita desarrollo \vspace{10pt}
-\end{itemize}
-\end{frame}
 
 \section[Negocio y seguridad]{Modelos de Negocio y Seguridad}
 
