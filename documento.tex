@@ -15,9 +15,9 @@
 \geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}  % Márgenes reducidos
 
 % Eliminamos los cuadros del índice
-\renewcommand{\cftsecfont}{\normalfont}  
-\renewcommand{\cftsubsecfont}{\normalfont}  
-\renewcommand{\cftsecpagefont}{\normalfont} 
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsubsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
 
 % Configuración de la portada
 \pagestyle{empty}  % Sin numeración en la portada
@@ -52,29 +52,48 @@
 \newpage
 
 % Hojas en blanco con títulos (Parte 1 ... Parte 4)
-\chapter*{Parte 1}
+\chapter*{Introducción}
+\addcontentsline{toc}{chapter}{Introducción}
+\pagestyle{plain}
+\chapter*{Introducción}
+\addcontentsline{toc}{chapter}{Introducción}
+
+En los últimos años, los dispositivos móviles se han convertido en una parte esencial de nuestra vida diaria. Pasamos gran parte del día usando el móvil para comunicarnos, trabajar, estudiar, hacer compras o simplemente entretenernos. Aunque dependemos mucho de estos dispositivos, muy pocas personas se plantean realmente cuánto control tienen sobre ellos. Esta es una de las razones por las que el software libre empieza a ganar importancia dentro del mundo móvil.
+
+El software libre se basa en cuatro ideas principales: poder usar un programa, entender cómo funciona, modificarlo y compartirlo con otras personas. Aunque suene simple, estas libertades cambian por completo la manera en que un usuario se relaciona con la tecnología. Frente a esto está el software propietario, que es lo que encontramos en la mayoría de móviles actuales: sistemas cerrados, sin acceso al código, y que dependen totalmente de lo que decide la empresa que los desarrolla.
+
+En el caso de los móviles, la situación es un poco particular. iOS, HarmonyOS o FireOS son completamente propietarios; todo está controlado por la empresa. Android es un caso especial: por un lado, existe AOSP, que es libre, pero los móviles que usamos en el día a día incluyen capa de Google, servicios cerrados y aplicaciones que no siempre se pueden quitar. Aun así, han surgido alternativas totalmente libres, como LineageOS, /e/OS o postmarketOS, creadas por comunidades que buscan recuperar el control sobre el dispositivo.
+
+Si miramos hacia atrás, el ecosistema móvil ha cambiado muchísimo. Entre 2000 y 2008 dominaban Symbian y Windows Mobile. Era una época en la que todavía no estaba claro qué sistema se impondría. Pero a partir de 2010, iOS y Android se quedaron prácticamente con todo el mercado. Aunque esta concentración redujo la variedad de sistemas, también motivó a muchas comunidades a crear alternativas libres que siguen creciendo hoy en día.
+
+Además, no hablamos solo de móviles. También existen tablets, UMPCs, MIDs y otros dispositivos híbridos que permiten instalar sistemas libres y alargarles la vida. De hecho, una de las ventajas del software libre es precisamente esa: evita que un dispositivo quede “obsoleto” solo porque el fabricante dejó de actualizarlo.
+
+Hay cuatro razones principales por las que el software libre es importante en móviles: privacidad, transparencia, control del dispositivo y mayor duración del hardware. En un momento donde los móviles recopilan tantos datos personales, tener un sistema que se pueda auditar da mucha más confianza. Y, por otro lado, poder modificar y mantener el sistema ayuda a que los dispositivos no terminen en la basura antes de tiempo.
+
+Eso sí, el panorama no es perfecto. Muchas marcas bloquean el \textit{bootloader}, lo que complica instalar otros sistemas. También hay componentes que dependen de drivers propietarios y que dificultan tener soporte completo en sistemas libres. Además, casi todo el mundo depende de tiendas de aplicaciones cerradas, lo que limita las opciones reales de los usuarios.
+
+A pesar de estas dificultades, las comunidades de software libre siguen avanzando y demostrando que existen alternativas reales. Proyectos como LineageOS, postmarketOS o F-Droid enseñan que usar software libre en móviles no es solo posible, sino que puede ser una opción más ética, más segura y más sostenible.
+
+En resumen, el software libre en dispositivos móviles ofrece una manera distinta de entender la tecnología: más abierta, más transparente y centrada en el usuario. Aunque hoy el mercado esté dominado por sistemas propietarios, las iniciativas libres siguen creciendo y cobrando importancia, y es muy probable que su papel en el futuro sea cada vez mayor.
+
+
+
+\chapter*{Parte 2}
 \thispagestyle{empty}
 \vspace*{\fill}
 \begin{center}
 \end{center}
 \newpage
 
-\chapter*{Parte 2}
-\thispagestyle{empty}  
-\vspace*{\fill}
-\begin{center}
-\end{center}
-\newpage
-
 \chapter*{Parte 3}
-\thispagestyle{empty}  
+\thispagestyle{empty}
 \vspace*{\fill}
 \begin{center}
 \end{center}
 \newpage
 
 \chapter*{Parte 4}
-\thispagestyle{empty}  
+\thispagestyle{empty}
 \vspace*{\fill}
 \begin{center}
 \end{center}

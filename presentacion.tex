@@ -1,0 +1,423 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+% other packages
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usepackage{graphicx,pstricks,listings,stackengine}
+
+\author{Berta Ferré, Hajweria Hussain, Marc Ribas, Fardin Arafat, Francisco Ruiz}
+\title{Software Libre en Dispositivos Móviles}
+\subtitle{Sistemas operativos, impacto y desarrollo móvil}
+\institute{Software Libre y Desarollo Social}
+\date{\today}
+\usepackage{CNU}
+
+% defs
+\def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{blue}\footnotesize #1}}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{halfgray}{gray}{0.55}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{deepblue},
+    emphstyle=\ttfamily\color{deepred},    % Custom highlighting style
+    stringstyle=\color{deepgreen},
+    numbers=left,
+    numberstyle=\small\color{halfgray},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox,
+}
+
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+    \begin{figure}[htpb]
+        \begin{center}
+            \includegraphics[width=0.1\linewidth]{fib.png}
+        \end{center}
+    \end{figure}
+
+    \begin{figure}[htpb]
+        \begin{center}
+            \includegraphics[width=0.1\linewidth]{Logo_UPC.png}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \tableofcontents[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+\end{frame}
+
+
+\section{Introducción}
+
+
+\begin{frame}{?`Qué es el Software Libre?}
+
+  \begin{itemize}
+    \item \textbf{Las 4 libertades}
+      \begin{itemize}
+        \item Usar el programa
+        \item Estudiar cómo funciona
+        \item Modificarlo
+        \item Compartirlo
+      \end{itemize}
+
+    \vspace{0.4cm}
+    \item \textbf{Licencias habituales}: GPL, Apache, MIT
+
+    \vspace{0.2cm}
+    \item \textbf{Frente al software propietario}: código cerrado, sin derecho a modificar ni redistribuir
+  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Software libre vs software propietario en móviles}
+
+\begin{center}
+\begin{tabular}{p{3cm} p{8cm}}
+  \textcolor{red}{\textbf{Propietario}} & iOS, HarmonyOS (parcial), FireOS \\[6pt]
+  \textcolor{orange}{\textbf{Mixto}}    & Android (AOSP libre + capa Google cerrada) \\[6pt]
+  \textcolor{green!50!black}{\textbf{Libre}} & LineageOS, postmarketOS, /e/OS \\
+\end{tabular}
+\end{center}
+
+\bigskip
+
+\begin{itemize}
+  \item Android es un punto intermedio: núcleo libre, servicios y capa de Google cerrados.
+\end{itemize}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{Evolución del ecosistema móvil}
+
+\begin{itemize}
+
+  % --- TIMELINE ---
+  \item \textbf{2000--2008}  
+  \begin{itemize}
+      \item Symbian, Windows Mobile
+  \end{itemize}
+  \vspace{6pt}
+
+  \item \textbf{2010--hoy}  
+  \begin{itemize}
+      \item Dominio absoluto de iOS y Android
+  \end{itemize}
+  \vspace{6pt}
+
+  \item \textbf{Actualidad}  
+  \begin{itemize}
+      \item Proyectos libres: LineageOS, postmarketOS, /e/OS
+  \end{itemize}
+
+\end{itemize}
+
+\vspace{0.4cm}
+
+\begin{itemize}
+  \item Aunque el mercado está concentrado, las comunidades siguen impulsando alternativas libres.
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}{Tipos de dispositivos}
+
+\begin{center}
+    \includegraphics[width=1\linewidth]{dispositivos.png}
+\end{center}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{Importancia del Software Libre en móviles}
+
+\begin{columns}[T]  % Alineación superior
+
+  \column{0.5\textwidth}
+    \begin{block}{Privacidad}
+      Mayor control sobre qué datos se recogen y cómo se usan.
+    \end{block}
+
+    \begin{block}{Transparencia}
+      El código puede ser auditado por cualquiera.
+    \end{block}
+
+  \column{0.5\textwidth}
+    \begin{block}{Control del dispositivo}
+      Permite al usuario modificar y adaptar el sistema.
+    \end{block}
+
+    \begin{block}{Longevidad del hardware}
+      Dispositivos sin soporte oficial pueden seguir actualizándose.
+    \end{block}
+
+\end{columns}
+
+\vspace{0.4cm}
+
+\begin{itemize}
+  \item En móviles, tener opciones libres permite recuperar control y extender la vida útil del hardware.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Limitaciones del ecosistema móvil actual}
+
+\begin{itemize}
+    \item \textbf{Bootloaders bloqueados}
+    \item \textbf{Drivers propietarios}
+    \item \textbf{Dependencia de tiendas de apps}
+\end{itemize}
+
+\vspace{0.4cm}
+
+\begin{itemize}
+    \item Las restricciones impuestas por los fabricantes limitan la instalación de sistemas libres, pero aún así existen proyectos que lo permiten.
+\end{itemize}
+
+\end{frame}
+
+
+
+\section[SO: cerrados/abiertos]{SO Móviles: Cerrados vs Abiertos}
+
+
+
+
+\section[SO libres]{SO Libres: ?`Se Puede Cambiar el SO?}
+
+
+
+
+\section[Apps libres]{Software Libre en Aplicaciones Móviles: Desarrollo, Costes y Difusión}
+
+
+
+
+\section[Negocio y seguridad]{Modelos de Negocio y Seguridad}
+
+
+\begin{frame}
+\frametitle{Modelos de Negocio y Seguridad}
+\begin{center}
+    \Huge \textbf{Modelos de Negocio y Seguridad}
+\end{center}
+\begin{center}
+    \large 1. ?`Negocio viable? \\
+    2. ?`Seguridad y privacidad?
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{?`Se puede ganar dinero con software libre?}
+
+\begin{itemize}
+    \item !`POR SUPUESTOOO!  \vspace{10pt}
+    \item No se basa en vender licencias. \vspace{10pt}
+    \item Modelos comunes:\vspace{2pt}
+    \begin{itemize}
+        \item Servicios profesionales y personalización.\vspace{2pt}
+        \item Soporte técnico especializado.\vspace{2pt}
+        \item Desarrollo a medida para fabricantes o empresas.\vspace{2pt}
+        \item Donaciones y financiación comunitaria. \vspace{10pt}
+    \end{itemize}
+    \item Oportunidades en ROMs, auditorías de seguridad, apps libres con servicios premium.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Modelo 1: Donaciones y mecenazgo}
+
+\begin{itemize}
+    \item Modelo muy común en software libre móvil. \vspace{3pt}
+    \item App libre y gratuita, y los usuarios contribuyen \textbf{voluntariamente}. \vspace{3pt}
+    \item Patreon, Ko-fi o GitHub Sponsors permiten ingresos estables (sin cerrar el código ni imponer restricciones). \vspace{3pt}
+    \item Comunidades \textbf{activas} y \textbf{comprometidas}. \vspace{3pt}
+    \item Mecenas reciben \textbf{ventajas suaves} (acceso a betas, participación en decisiones, sin funciones privativas. \vspace{3pt}
+    \item \textbf{Objetivo}: sostener el desarrollo a largo plazo manteniendo la libertad del software. \vspace{3pt}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Modelo 2: Freemium y servicios añadidos}
+\begin{itemize}
+    \item App gratuita con \textbf{funciones premium} opcionales. \vspace{8pt}
+    \item Monetización mediante \textbf{suscripciones} o pago único. \vspace{8pt}
+    \item El código libre sin restricciones ni compromisos. \vspace{8pt}
+    \item \textbf{Apps ideales:} \vspace{8pt} 
+    \begin{itemize}
+        \item{sincronización en la nube} \vspace{8pt}
+        \item{colaboración entre usuarios} \vspace{8pt}
+        \item{copias de seguridad} \vspace{8pt}
+        \item{extensiones avanzadas} \vspace{8pt}
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Modelo 3: Publicidad ética}
+\begin{itemize}
+    \item Uso de \textbf{anuncios no invasivos}. \vspace{8pt}
+    \item No interrumpen la experiencia. \vspace{8pt}
+    \item Publicidad \textbf{sin rastreo ni perfiles}. \vspace{8pt}
+    \item Compromiso la \textbf{transparencia} hacia el usuario. \vspace{8pt}
+    \item \textbf{Ejemplos de publicidad ética:} \vspace{8pt}
+    \begin{itemize}
+        \item banners estáticos sin seguimiento \vspace{8pt}
+        \item anuncios no personalizados/perfilados y descentralizados \vspace{8pt}
+        \item publicidad desactivable mediante donaciones \vspace{8pt}
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Comparación de modelos y rentabilidad}
+\begin{itemize}
+    \item \textbf{Publicidad ética} \vspace{2pt}
+    \begin{itemize}
+        \item Ingresos bajos pero constantes \vspace{1pt}
+        \item No invasiva y sin rastreo ((apps con muchos usuarios)) \vspace{1pt}
+    \end{itemize} \vspace{2pt}
+
+    \item \textbf{Donaciones} \vspace{2pt}
+    \begin{itemize}
+        \item Sostenible con comunidad activa \vspace{1pt}
+        \item Ingresos impredecibles, dependen del compromiso \vspace{1pt}
+    \end{itemize} \vspace{2pt}
+
+    \item \textbf{Freemium y servicios añadidos} \vspace{2pt}
+    \begin{itemize}
+        \item Ingresos estables y escalables \vspace{1pt}
+        \item Pago por funciones avanzadas o servicios adicionales \vspace{1pt}
+    \end{itemize} \vspace{2pt}
+
+    \item \textbf{Desarrollo por encargo y soporte} \vspace{2pt}
+    \begin{itemize}
+        \item Mayor rentabilidad y sostenibilidad a largo plazo\vspace{1pt}
+        \item Personalización profesional y soporte técnico \vspace{1pt}
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Seguridad en móviles: ?`es el SL más seguro?}
+
+\begin{itemize}
+    \item \textbf{Auditoría abierta} \vspace{5pt}
+    \begin{itemize}
+        \item Código \textbf{accesible} para cualquiera \vspace{3pt}
+        \item Permite detectar \textbf{vulnerabilidades} de manera transparente \vspace{3pt}
+    \end{itemize} \vspace{5pt}
+
+    \item \textbf{Correcciones más rápidas} \vspace{5pt}
+    \begin{itemize}
+        \item Los fallos pueden ser \textbf{solucionados} por la \textbf{comunidad} \vspace{3pt}
+        \item \textbf{Reduce el tiempo} entre detección y solucionado \vspace{3pt}
+    \end{itemize} \vspace{5pt}
+
+    \item \textbf{Sin componentes ocultos} \vspace{5pt}
+    \begin{itemize}
+        \item No hay puertas traseras escondidas \vspace{3pt}
+        \item Garantiza mayor \textbf{privacidad} y \textbf{confianza} en la app \vspace{3pt}
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Principales amenazas en móviles}
+
+\begin{itemize}
+    \item \textbf{Malware y falsificación de apps} \vspace{5pt}
+    \begin{itemize}
+        \item Riesgo de aplicaciones modificadas o maliciosas \vspace{3pt}
+        \item Permite auditar y verificar el código \vspace{3pt}
+    \end{itemize} \vspace{5pt}
+
+    \item \textbf{Permisos excesivos} \vspace{5pt}
+    \begin{itemize}
+        \item Muchas apps solicitan más permisos de los necesarios \vspace{3pt}
+        \item Revisar el código libre permite entender qué permisos realmente se usan \vspace{3pt}
+    \end{itemize} \vspace{5pt}
+
+    \item \textbf{Espionaje y rastreo} \vspace{5pt}
+    \begin{itemize}
+        \item Seguimiento de la actividad del usuario y recopilación de datos \vspace{3pt}
+        \item El software libre aumenta la transparencia y la confianza \vspace{3pt}
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Privacidad: microG, /e/OS y alternativas libres}
+
+\begin{itemize}
+    \item \textbf{microG} \vspace{5pt}
+    \begin{itemize}
+        \item Sustituye los servicios de Google \vspace{3pt}
+        \item Reduce el rastreo manteniendo compatibilidad con apps \vspace{3pt}
+    \end{itemize} \vspace{5pt}
+
+    \item \textbf{/e/OS} \vspace{5pt}
+    \begin{itemize}
+        \item Sistema operativo móvil completamente libre \vspace{3pt}
+        \item Prioriza la privacidad del usuario y minimiza datos compartidos \vspace{3pt}
+    \end{itemize} \vspace{5pt}
+
+    \item \textbf{LineageOS sin Google} \vspace{5pt}
+    \begin{itemize}
+        \item ROM basada en Android sin servicios propietarios \vspace{3pt}
+        \item Permite controlar qué información se comparte \vspace{3pt}
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Conclusión}
+
+\begin{itemize}
+    \item \textbf{Negocio viable} \vspace{3pt}
+    \begin{itemize}
+        \item Se pueden generar \textbf{ingresos} \vspace{3pt}
+        \item Donaciones, freemium, publicidad ética y desarrollo por encargo \vspace{3pt}
+    \end{itemize} \vspace{5pt}
+
+    \item \textbf{Más seguridad y transparencia} \vspace{3pt}
+    \begin{itemize}
+        \item Código auditable y sin componentes ocultos \vspace{3pt}
+        \item Corrección rápida de vulnerabilidades y control sobre permisos \vspace{3pt}
+    \end{itemize} \vspace{5pt}
+
+    \item \textbf{Futuro: más dispositivos abiertos} \vspace{3pt}
+    \begin{itemize}
+        \item Aumento de sistemas móviles libres y alternativos \vspace{3pt}
+        \item Preocupación por la privacidad --> SL
+    \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+\end{document}
